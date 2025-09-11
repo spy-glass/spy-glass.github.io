@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spyglass Animation</title>
+<style>
+  /* Full-page background */
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    background: url('/backround.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  /* Spyglass styling */
+  .spyglass {
+    width: 150px;
+    height: 150px;
+    background: url('/spyglass.png') no-repeat center center;
+    background-size: contain;
+    animation: bounce 4s ease-in-out infinite;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+  }
+
+  /* Bounce animation */
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+
+  /* Hover animation */
+  .spyglass:hover {
+    transform: scale(1.2) rotate(15deg);
+    filter: drop-shadow(0 0 10px rgba(255,255,255,0.7));
+  }
+</style>
+</head>
+<body>
+  <div class="spyglass"></div>
+</body>
+</html>
